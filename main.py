@@ -1,4 +1,10 @@
 from mainFunc import *
 
-txtFile, htmlString  = argParse()
+txtPath, htmlString  = argParse()
 print(htmlString)
+
+stackPDA = []
+arrTag = tagParse(htmlString=htmlString)
+
+print(arrTag)
+

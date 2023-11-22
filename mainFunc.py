@@ -1,5 +1,6 @@
 import os
 import argparse
+from typing import List
 
 
 def argParse() -> tuple[str, str]:
@@ -18,3 +19,23 @@ def argParse() -> tuple[str, str]:
         exit()
     
     return (txtArg, open(htmlArg, "r").read())
+
+def tagParse(htmlString:str) -> List[any]:
+    arrTag = []
+    line = 1
+    stringTemp = ""
+    for i in htmlString:
+        if i == "<":
+            if (stringTemp != ""):
+                arrTag.append((line, stringTemp))
+            stringTemp = ""
+            stringTemp += i
+        elif i == ">":
+            stringTemp += i
+            arrTag.append((line, stringTemp))
+            stringTemp = ""
+        elif (i != " ") and (i != "\n"):
+            stringTemp += i
+        if i == "\n":
+            line += 1
+    return arrTag
