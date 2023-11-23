@@ -8,3 +8,5 @@ arrTag = tagParse(htmlString=htmlString)
 
 print(arrTag)
 
+print(TagClassSeparator(arrTag[2][1]))
+

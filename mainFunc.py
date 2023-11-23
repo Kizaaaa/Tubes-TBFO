@@ -20,7 +20,10 @@ def argParse() -> tuple[str, str]:
     
     return (txtArg, open(htmlArg, "r").read())
 
+
+# fungsinya buat html (bentuk string) jadi array of tag and argument
 def tagParse(htmlString:str) -> List[any]:
+    isTag = False
     arrTag = []
     line = 1
     stringTemp = ""
@@ -30,12 +33,31 @@ def tagParse(htmlString:str) -> List[any]:
                 arrTag.append((line, stringTemp))
             stringTemp = ""
             stringTemp += i
+            isTag = True
         elif i == ">":
             stringTemp += i
             arrTag.append((line, stringTemp))
             stringTemp = ""
+            isTag = False
+        elif isTag:
+            stringTemp += i
         elif (i != " ") and (i != "\n"):
             stringTemp += i
         if i == "\n":
             line += 1
     return arrTag
+
+
+# fungsinya kurleb bikin <a href=""> jadi ["a", "href=\"\""]
+def TagClassSeparator(stringArg : str) -> List[str]:
+    strTemp = ""
+    ArrRes = []
+    for i in stringArg:
+        if (i == ">" or i == " ") and strTemp != "":
+            ArrRes.append(strTemp)
+            strTemp = ""
+        else:
+            if (i != "<") and (i != "\n") and (i != " "):
+                strTemp += i
+    return ArrRes
+
