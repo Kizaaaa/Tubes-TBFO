@@ -2,6 +2,35 @@ import os
 import argparse
 from typing import List
 
+class Stack:
+    def __init__(self, buffer:List[any], idxTop:int) -> None:
+        self.buffer = buffer
+        self.idxTop = idxTop
+        
+    def Top(self) -> any:
+        if (self.idxTop == -1):
+            return None
+        else:
+            return (self.buffer[self.idxTop])
+
+    def push(self, toBePushed:any):
+        self.buffer.append(toBePushed)
+        self.idxTop += 1
+
+    def pop(self) -> any:
+        toBeRet = self.buffer.pop()
+        self.idxTop -= 1
+        return toBeRet
+    
+    def length(self) -> int:
+        return (len(self.buffer))
+    
+    def isEmpty(self) -> bool:
+        return (self.idxTop == -1)
+    
+    def DisplayStack(self):
+        print(self.buffer)
+        
 
 def argParse() -> tuple[str, str]:
     parser = argparse.ArgumentParser()
@@ -60,4 +89,3 @@ def TagClassSeparator(stringArg : str) -> List[str]:
             if (i != "<") and (i != "\n") and (i != " "):
                 strTemp += i
     return ArrRes
-
