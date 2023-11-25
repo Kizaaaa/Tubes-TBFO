@@ -1,0 +1,93 @@
+Q H B L a I U F i T # total states
+<html> <head> </head> <title> </title> <link <script> </script> <body> </body> <h1> </h1> <h2> </h2> <h3> </h3> <h4> </h4> <h5> </h5> <h6> </h6> <p> </p> <em> </em> <b> </b> <abbr> </abbr> <strong> </strong> <small> </small> <div> </div> <a> </a> <button> </button> <form> </form> <table> </table> <tr> </tr> <td> </td> <th> </th> rel href src alt type action method type <br> <hr> <img <input submit reset button GET POST = " > # input word symbols
+Z HTML HEAD TITLE SCRIPT BODY H1 H2 H3 H4 H5 H6 P EM B ABBR STRONG SMALL DIV BUTTON TR TD TH ATTR Valid = " > # stack symbols
+Z D H T C B 1 2 3 4 5 6 P E b S s D U r d h R V = " > # stack symbols
+Q # starting state
+Z # starting stack
+B # accepting states
+E # E - accepts with empty stack or F - accepts with accepting state
+Q e e Q Z # list of productions (current state, read from word, take from stack, next state, add to stack)
+Q <html> Z Q D
+Q <head> D H HD
+H <title> H H TH
+H </title> T H e
+H <link H L R>H
+L rel R L =""
+L href > L ="">
+L > > H e
+H <script H H >CH
+H src > H ="">
+H </script> C H e
+H = = H e
+H " " H e
+H </head> H H e
+H <body> D B BD 
+B <h1> B B 1B
+B </h1> 1 B e
+B <h2> B B 2B
+B </h2> 2 B e
+B <h3> B B 3B
+B </h3> 3 B e
+B <h4> B B 4B
+B </h4> 4 B e
+B <h5> B B 5B
+B </h5> 5 B e
+B <h6> B B 6B
+B </h6> 6 B e
+B <p> B B P
+B </p> P B e
+B <br B B >B
+B <em> B B EB
+B </em> E B e
+B <b> B B bB
+B </b> b B e
+B <abbr> B B AB
+B </abbr> A B e
+B <strong> B B SB
+B </strong> S B e
+B <small> B B sB
+B </small> s B e
+B <hr B B >B
+B <div> B B DB
+B </div> D B e
+B <a B a >B
+a href > B ="">
+a </a> B B B
+a " " a e
+a = = a e
+a > > a e
+B <img B I R>B
+I src R I =""
+I alt > I ="">
+I " " I e
+I = = I e
+I > > B e
+B <button B U >B
+U type > U ="V">
+U submit V U e
+U reset V U e
+U button V U e
+U " " U e
+U = = U e
+U > > B e
+U </button> B B B
+B <form B F >B
+F action > F ="">
+F method > F ="V">
+F GET V F e
+F POST V F e
+F = = F e
+F " " F e
+F > > F e
+F </form> B B B
+B <table> B T B
+T <tr> B T rB
+T </tr> r T e
+T <td> B T dB
+T </td> d T e
+T <th> B T hB
+T </th> h T e
+T </table> B B B
+B > > B e
+B </body> B B e
+B </html> D B e
