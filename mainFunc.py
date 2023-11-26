@@ -47,7 +47,7 @@ def argParse() -> tuple[str, str]:
         print("tidak ditemukan file html yang dimaksud")
         exit()
     
-    return (open(txtArg, "r").read(), open(htmlArg, "r").read())
+    return (open(txtArg, "r").read(), open(htmlArg, "r", encoding='utf-8').read())
 
 
 
@@ -85,24 +85,28 @@ def TagClassSeparator(stringArg : str) -> List[str]:
     strTemp = ""
     ArrRes = []
     for i in stringArg:
+        if (i == "!" and strTemp == "<"):
+            break
         if (i == ">" or i == " "):
             if (i == ">" and noSeparate==False):
                 if strTemp != "":
                     ArrRes.append(strTemp)
                     strTemp = ""
                 strTemp += i
-            elif (noSeparate==True):
+            elif (noSeparate and i != " "):
                 strTemp += i
             if strTemp != "":
                 ArrRes.append(strTemp)
                 strTemp = ""
-        elif (i == "\"" or i == "="):
+        elif (i == "\"" or i == "=" or i == "”"):
             if (strTemp != ""):
                 ArrRes.append(strTemp)
                 strTemp = ""
-            if (i == "\""):
+            if (i == "\"" or i == "”"):
                 dontCopy = not dontCopy
-            strTemp += i
+                strTemp += "\""
+            else:
+                strTemp += i
             ArrRes.append(strTemp)
             strTemp = ""
         else:

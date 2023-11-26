@@ -53,9 +53,9 @@ D <link D L R>D
 L e D D D
 D <script D s >CD
 s e D D D
-D <h1 B B >1B
-B </h1> 1 B e
-B <h2 B B >2B
+D <h1 D D >1D
+D </h1> 1 D e
+D <h2 D D >2D
 D </h2> 2 D e
 D <h3 D D >3D
 D </h3> 3 D e
@@ -70,7 +70,7 @@ D </p> P D e
 D <hr D D >D
 D <a D a >D
 a e D D D
-D <img D I R>B
+D <img D I R>D
 I e D D D
 D <button D U >D
 U </button> D D D

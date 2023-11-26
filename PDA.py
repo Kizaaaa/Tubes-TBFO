@@ -38,7 +38,7 @@ class PDA:
                                 self.stack.push(k)                        
                         break  
             if (ret==False):
-                print("No transition found for state " + self.state + " and input " + input)            
+                print("No transition found for state " + self.state + " and input " + input + ", stack position = " + str(self.stack.buffer))            
             return ret
     
     def isAccept(self):
