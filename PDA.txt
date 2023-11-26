@@ -22,7 +22,7 @@ H <script H s >CH
 s src > s ="">
 s > > s e
 s e H H H
-H </script> C H e
+s </script> C s e
 H = = H e
 H " " H e
 H > > H e
