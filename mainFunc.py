@@ -50,6 +50,7 @@ def argParse() -> tuple[str, str]:
     return (open(txtArg, "r").read(), open(htmlArg, "r").read())
 
 
+
 # fungsinya buat html (bentuk string) jadi array of tag and argument
 def tagParse(htmlString:str) -> List[any]:
     isTag = False
@@ -85,6 +86,9 @@ def TagClassSeparator(stringArg : str) -> List[str]:
     for i in stringArg:
         if (i == ">" or i == " "):
             if (i == ">"):
+                if strTemp != "":
+                    ArrRes.append(strTemp)
+                    strTemp = ""
                 strTemp += i
             if strTemp != "":
                 ArrRes.append(strTemp)
