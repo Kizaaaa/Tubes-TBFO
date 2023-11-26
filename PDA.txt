@@ -1,6 +1,5 @@
-Q H B L a I U F i T s # total states
-<html> <head> </head> <title> </title> <link <script> </script> <body> </body> <h1> </h1> <h2> </h2> <h3> </h3> <h4> </h4> <h5> </h5> <h6> </h6> <p> </p> <em> </em> <b> </b> <abbr> </abbr> <strong> </strong> <small> </small> <div> </div> <a> </a> <button> </button> <form> </form> <table> </table> <tr> </tr> <td> </td> <th> </th> rel href src alt type action method type <br> <hr> <img <input submit reset button get post text password email number checkbox id class style = " > # input word symbols
-# Z HTML HEAD TITLE SCRIPT BODY H1 H2 H3 H4 H5 H6 P EM B ABBR STRONG SMALL DIV BUTTON TR TD TH ATTR Valid = " > 
+Q H B L a I U F i T s D # total states
+<html <head </head> <title </title> <link <script </script> <body </body> <h1 </h1> <h2 </h2> <h3 </h3> <h4 </h4> <h5 </h5> <h6 </h6> <p </p> <em </em> <b </b> <abbr </abbr> <strong </strong> <small </small> <div </div <a </a> <button </button> <form </form> <table </table> <tr </tr> <td </td> <th </th> rel href src alt type action method type <br <hr <img <input submit reset button get post text password email number checkbox id class style = " > # input word symbols
 Z D H T C B 1 2 3 4 5 6 P E b A S s D U r d h R V = " > # stack symbols
 Q # starting state
 Z # starting stack
@@ -32,6 +31,8 @@ H <body D H >BD
 H e B B B
 B <link B L R>B
 L e B B B
+B <script B s >CB
+s e B B B
 B <h1 B B >1B
 B </h1> 1 B e
 B <h2 B B >2B
@@ -44,24 +45,66 @@ B <h5 B B >5B
 B </h5> 5 B e
 B <h6 B B >6B
 B </h6> 6 B e
-B <p B t >PB
-B e P t P
+B <p B B >PB
 B </p> P B e
 B <hr B B >B
-B <div B B >DB
-B </div> D B e
+B <div B D >DB # every tag for div
+D <link D L R>D
+L e B B B
+L e D D D
+D <script D s >CD
+s e D D D
+D <h1 B B >1B
+B </h1> 1 B e
+B <h2 B B >2B
+D </h2> 2 D e
+D <h3 D D >3D
+D </h3> 3 D e
+D <h4 D D >4D
+D </h4> 4 D e
+D <h5 D D >5D
+D </h5> 5 D e
+D <h6 D D >6D
+D </h6> 6 D e
+D <p D D >PD
+D </p> P D e
+D <hr D D >D
+D <a D a >D
+a e D D D
+D <img D I R>B
+I e D D D
+D <button D U >D
+U </button> D D D
+D <form D F >D
+F </form> D D D
+F <input D i >D
+D <table D T >D
+T <tr D T >rD
+T </tr> r T e
+T <td r T >dr
+T </td> d T e
+T <th r T >hr
+T </th> h T e
+T </table> D D D
+D = = D e
+D " " D e
+D > > D e
+D </div> D B e
 B <a B a >B
-a href > B ="">
-a </a> B B B
+a href > a ="">
+a </a> B a e
+a e B B B
 a " " a e
 a = = a e
 a > > a e
 B <img B I R>B
 I src R I =""
 I alt > I ="">
+I alt R I =""R
 I " " I e
 I = = I e
-I > > B e
+I > > I e
+I e B B B
 B <button B U >B
 U type > U ="V">
 U submit V U e
@@ -69,7 +112,7 @@ U reset V U e
 U button V U e
 U " " U e
 U = = U e
-U > > B e
+U > > U e
 U </button> B B B
 B <form B F >B
 F action > F ="">
@@ -93,9 +136,9 @@ i > > F e
 B <table B T >B
 T <tr B T >rB
 T </tr> r T e
-T <td B T >dB
+T <td r T >dr
 T </td> d T e
-T <th B T >hB
+T <th r T >hr
 T </th> h T e
 T </table> B B B
 T = = T e
@@ -106,17 +149,27 @@ B " " B e
 B > > B e
 B </body> B B e
 B </html> D B e
-_ <strong ZDHTCB123456PDUrdhRV B >SB
-_ </strong> S B e
-_ <small ZDHTCB123456PDUrdhRV B >sB
-_ </small> s B e
-_ <em ZDHTCB123456PDUrdhRV B >EB
-_ </em> E B e
-_ <br ZDHTCB123456PDUrdhRV B >B
-_ <b ZDHTCB123456PDUrdhRV B >bB
-_ </b> b B e
-_ <abbr ZDHTCB123456PDUrdhRV B >AB
-_ </abbr> A B e
+B <strong 123456PD B >SB # ganti yang ada konten aja
+B </strong> S B e
+F <strong B F >SB
+F </strong> S F e
+B <small 123456PD B >sB
+B </small> s B e
+F <small B F >sB
+F </small> s F e
+B <em 123456PD B >EB
+B </em> E B e
+F <em B F >EB
+F </em> E F e
+B <br 123456PD B >B
+B <b 123456PD B >bB
+B </b> b B e
+F <b B F >bB
+F </b> b F e
+B <abbr 123456PD B >AB
+B </abbr> A B e
+F <abbr B F >AB
+F </abbr> A F e
 _ id > _ ="">
 _ class > _ ="">
 _ style > _ ="">
