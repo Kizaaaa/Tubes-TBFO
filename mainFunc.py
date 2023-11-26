@@ -79,14 +79,27 @@ def tagParse(htmlString:str) -> List[any]:
 
 # fungsinya kurleb bikin <a href=""> jadi ["a", "href=\"\""]
 def TagClassSeparator(stringArg : str) -> List[str]:
+    dontCopy = False
     strTemp = ""
     ArrRes = []
     for i in stringArg:
-        if (i == ">" or i == " ") and strTemp != "":
+        if (i == ">" or i == " "):
+            if (i == ">"):
+                strTemp += i
+            if strTemp != "":
+                ArrRes.append(strTemp)
+                strTemp = ""
+        elif (i == "\"" or i == "="):
+            if (strTemp != ""):
+                ArrRes.append(strTemp)
+                strTemp = ""
+            if (i == "\""):
+                dontCopy = not dontCopy
+            strTemp += i
             ArrRes.append(strTemp)
             strTemp = ""
         else:
-            if (i != "<") and (i != "\n") and (i != " "):
+            if (i != "\n") and (i != " ") and not dontCopy:
                 strTemp += i
     return ArrRes
 
