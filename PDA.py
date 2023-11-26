@@ -13,7 +13,7 @@ class PDA:
         self.transitions = transitions
     
     def run(self,input):
-        if (input not in self.inputs and input!='e'):
+        if (input not in self.inputs):
             return False
         else:
             ret = False
@@ -26,14 +26,14 @@ class PDA:
                         else:
                             self.state = j[3]
                         self.stack.pop()
-                        if (k!='e'):
-                            for k in reversed(j[4]):
+                        for k in reversed(j[4]):
+                            if (k!='e'):
                                 self.stack.push(k)
                     if (j[1] == 'e'):
                         self.state = j[3]
                         self.stack.pop()
-                        if (k!='e'):
-                            for k in reversed(j[4]):
+                        for k in reversed(j[4]):
+                            if (k !='e'):
                                 self.stack.push(k)                        
                         break              
             return ret
