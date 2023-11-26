@@ -47,7 +47,7 @@ def argParse() -> tuple[str, str]:
         print("tidak ditemukan file html yang dimaksud")
         exit()
     
-    return (txtArg, open(htmlArg, "r").read())
+    return (open(txtArg, "r").read(), open(htmlArg, "r").read())
 
 
 # fungsinya buat html (bentuk string) jadi array of tag and argument
@@ -89,3 +89,45 @@ def TagClassSeparator(stringArg : str) -> List[str]:
             if (i != "<") and (i != "\n") and (i != " "):
                 strTemp += i
     return ArrRes
+
+
+def txtParse(txtString:str) -> List[any]:
+    line = 1
+    stopCopy = False
+    states = []
+    inputs = []
+    stacks = []
+    initial_state = []
+    initial_stack = []
+    accept_state = []
+    accept_condition = []
+    transition = []
+    txtTemp = ""
+    for i in txtString:
+        if i == "\n":
+            stopCopy = False
+            if line == 1:
+                states = list(txtTemp.split())
+            elif line == 2:
+                inputs = list(txtTemp.split())
+            elif line == 3:
+                stacks = list(txtTemp.split())
+            elif line == 4:
+                initial_state = txtTemp.replace(" ", "")
+            elif line == 5:
+                initial_stack = txtTemp.replace(" ", "")
+            elif line == 6:
+                accept_state = txtTemp.replace(" ", "")
+            elif line == 7:
+                accept_condition = txtTemp.replace(" ", "")
+            else:
+                transition.append(list(txtTemp.split()))
+            txtTemp = ""
+            line += 1
+        elif i == "#":
+            stopCopy = True
+        elif not stopCopy:
+            txtTemp += i
+    
+    return states, inputs, stacks, initial_state, initial_stack, accept_state, accept_condition, transition
+
