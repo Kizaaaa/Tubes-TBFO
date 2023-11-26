@@ -1,12 +1,12 @@
 Q H B L a I U F i T s D # total states
-<html </html> <head </head> <title </title> <link <script </script> <body </body> <h1 </h1> <h2 </h2> <h3 </h3> <h4 </h4> <h5 </h5> <h6 </h6> <p </p> <em </em> <b </b> <abbr </abbr> <strong </strong> <small </small> <div </div <a </a> <button </button> <form </form> <table </table> <tr </tr> <td </td> <th </th> rel href src alt type action method type <br <hr <img <input submit reset button get post text password email number checkbox id class style = " > # input word symbols
-Z D H T C B 1 2 3 4 5 6 P E b A S s D U r d h R V = " > # stack symbols
+<html </html> <head </head> <title </title> <link <script </script> <body </body> <h1 </h1> <h2 </h2> <h3 </h3> <h4 </h4> <h5 </h5> <h6 </h6> <p </p> <em </em> <b </b> <abbr </abbr> <strong </strong> <small </small> <div </div> <a </a> <button </button> <form </form> <table </table> <tr </tr> <td </td> <th </th> rel href src alt type action method type <br <hr <img <input submit reset button get post text password email number checkbox id class style = " > # input word symbols
+Z O H T C B 1 2 3 4 5 6 P E b A S s D U r d h R V = " > # stack symbols
 Q # starting state
 Z # starting stack
 B # accepting states
 E # E - accepts with empty stack or F - accepts with accepting state
-Q <html Z Q >D # list of productions (current state, read from word, take from stack, next state, add to stack)
-Q <head D H >HD
+Q <html Z Q >O # list of productions (current state, read from word, take from stack, next state, add to stack)
+Q <head O H >HO
 Q = = Q e
 Q " " Q e
 Q > > Q e
@@ -27,7 +27,7 @@ H = = H e
 H " " H e
 H > > H e
 H </head> H H e
-H <body D H >BD 
+H <body O H >BO
 H e B B B
 B <link B L R>B
 L e B B B
@@ -79,11 +79,6 @@ F </form> D D D
 F <input D i >D
 D <table D T >D
 T <tr D T >rD
-T </tr> r T e
-T <td r T >dr
-T </td> d T e
-T <th r T >hr
-T </th> h T e
 T </table> D D D
 D = = D e
 D " " D e
@@ -147,7 +142,7 @@ B = = B e
 B " " B e
 B > > B e
 B </body> B B e
-B </html> D B e
+B </html> O B e
 B <strong 1 B >SB # ganti yang ada konten aja
 B <strong 2 B >SB
 B <strong 3 B >SB
@@ -168,40 +163,40 @@ B <small P B >sB
 B </small> s B e
 F <small B F >sB
 F </small> s F e
-B <em 1 B >EB
-B <em 2 B >EB
-B <em 3 B >EB
-B <em 4 B >EB
-B <em 5 B >EB
-B <em 6 B >EB
-B <em P B >EB
+B <em 1 B >E1
+B <em 2 B >E2
+B <em 3 B >E3
+B <em 4 B >E4
+B <em 5 B >E5
+B <em 6 B >E6
+B <em P B >EP
 B </em> E B e
 F <em B F >EB
 F </em> E F e
-B <br 1 B >B
-B <br 2 B >B
-B <br 3 B >B
-B <br 4 B >B
-B <br 5 B >B
-B <br 6 B >B
-B <br P B >B
-B <b 1 B >bB
-B <b 2 B >bB
-B <b 3 B >bB
-B <b 4 B >bB
-B <b 5 B >bB
-B <b 6 B >bB
-B <b P B >bB
+B <br 1 B >1
+B <br 2 B >2
+B <br 3 B >3
+B <br 4 B >4
+B <br 5 B >5
+B <br 6 B >6
+B <br P B >P
+B <b 1 B >b1
+B <b 2 B >b2
+B <b 3 B >b3
+B <b 4 B >b4
+B <b 5 B >b5
+B <b 6 B >b6
+B <b P B >bP
 B </b> b B e
 F <b B F >bB
 F </b> b F e
-B <abbr 1 B >AB
-B <abbr 2 B >AB
-B <abbr 3 B >AB
-B <abbr 4 B >AB
-B <abbr 5 B >AB
-B <abbr 6 B >AB
-B <abbr P B >AB
+B <abbr 1 B >A1
+B <abbr 2 B >A2
+B <abbr 3 B >A3
+B <abbr 4 B >A4
+B <abbr 5 B >A5
+B <abbr 6 B >A6
+B <abbr P B >AP
 B </abbr> A B e
 F <abbr B F >AB
 F </abbr> A F e
@@ -211,3 +206,4 @@ _ style > _ ="">
 _ id R _ =""R
 _ class R _ =""R
 _ style R _ =""R
+_ <!-- _ _ -->
