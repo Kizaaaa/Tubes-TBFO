@@ -42,5 +42,3 @@ else:
             else:
                 print(arrTag[i][1], end="")
     print("\"")
-
-print(TagClassSeparator(arrTag[15][1]))

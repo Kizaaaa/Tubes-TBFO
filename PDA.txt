@@ -1,6 +1,6 @@
 Q H B L a I U F i T s D # total states
 <html </html> <head </head> <title </title> <link <script </script> <body </body> <h1 </h1> <h2 </h2> <h3 </h3> <h4 </h4> <h5 </h5> <h6 </h6> <p </p> <em </em> <b </b> <abbr </abbr> <strong </strong> <small </small> <div </div> <a </a> <button </button> <form </form> <table </table> <tr </tr> <td </td> <th </th> rel href src alt type action method type <br <hr <img <input submit reset button get post text password email number checkbox id class style = " > # input word symbols
-Z O H T C B 1 2 3 4 5 6 P E b A S s D U r d h R V = " > # stack symbols
+Z O H T C B 1 2 3 4 5 6 P E b A S s D U F r d h R V = " > # stack symbols
 Q # starting state
 Z # starting stack
 B # accepting states
@@ -21,8 +21,8 @@ L e H H H
 H <script H s >CH
 s src > s ="">
 s > > s e
-s e H H H
 s </script> C s e
+s e H H H
 H = = H e
 H " " H e
 H > > H e
@@ -69,7 +69,7 @@ D <p D D >PD
 D </p> P D e
 D <hr D D >D
 D <a D a >D
-a e D D D
+a </a> D D D
 D <img D I R>D
 I e D D D
 D <button D U >D
@@ -83,11 +83,11 @@ T </table> D D D
 D = = D e
 D " " D e
 D > > D e
-D </div> D B e
+D </div> D D e
+D e B B B
 B <a B a >B
 a href > a ="">
-a </a> B a e
-a e B B B
+a </a> B B B
 a " " a e
 a = = a e
 a > > a e
@@ -100,7 +100,7 @@ I = = I e
 I > > I e
 I e B B B
 B <button B U >B
-U type > U ="V">
+U type > U ="">
 U submit V U e
 U reset V U e
 U button V U e
@@ -110,15 +110,33 @@ U > > U e
 U </button> B B B
 B <form B F >B
 F action > F ="">
-F method > F ="V">
+F method > F ="">
 F get V F e
 F post V F e
+F <h1 B F >1B
+F </h1> 1 F e
+F <h2 B F >2B
+F </h2> 2 F e
+F <h3 B F >3B
+F </h3> 3 F e
+F <h4 B F >4B
+F </h4> 4 F e
+F <h5 B F >5B
+F </h5> 5 F e
+F <h6 B F >6B
+F </h6> 6 F e
+F <p B F >PB
+F </p> P F e
+F <button B U >FB
+U </button> F F e
+F <div B D >DFB
+D e F F e
 F = = F e
 F " " F e
 F > > F e
 F </form> B B B
 F <input B i >B
-i type > i ="V">
+i type > i ="">
 i text V i e
 i password V i e
 i email V i e
@@ -143,26 +161,29 @@ B " " B e
 B > > B e
 B </body> B B e
 B </html> O B e
-B <strong 1 B >SB # ganti yang ada konten aja
-B <strong 2 B >SB
-B <strong 3 B >SB
-B <strong 4 B >SB
-B <strong 5 B >SB
-B <strong 6 B >SB
-B <strong P B >SB
+B <strong B B >SB # ganti yang ada konten aja
+B <strong 1 B >S1
+B <strong 2 B >S2
+B <strong 3 B >S3
+B <strong 4 B >S4
+B <strong 5 B >S5
+B <strong 6 B >S6
+B <strong P B >SP
 B </strong> S B e
 F <strong B F >SB
 F </strong> S F e
-B <small 1 B >sB
-B <small 2 B >sB
-B <small 3 B >sB
-B <small 4 B >sB
-B <small 5 B >sB
-B <small 6 B >sB
-B <small P B >sB
+B <small B B >sB
+B <small 1 B >s1
+B <small 2 B >s2
+B <small 3 B >s3
+B <small 4 B >s4
+B <small 5 B >s5
+B <small 6 B >s6
+B <small P B >sP
 B </small> s B e
 F <small B F >sB
 F </small> s F e
+B <em B B >EB
 B <em 1 B >E1
 B <em 2 B >E2
 B <em 3 B >E3
@@ -173,6 +194,7 @@ B <em P B >EP
 B </em> E B e
 F <em B F >EB
 F </em> E F e
+B <br B B >B
 B <br 1 B >1
 B <br 2 B >2
 B <br 3 B >3
@@ -180,6 +202,8 @@ B <br 4 B >4
 B <br 5 B >5
 B <br 6 B >6
 B <br P B >P
+F <br B F >B
+B <b B B >bB
 B <b 1 B >b1
 B <b 2 B >b2
 B <b 3 B >b3
@@ -190,6 +214,7 @@ B <b P B >bP
 B </b> b B e
 F <b B F >bB
 F </b> b F e
+B <abbr B B >A1
 B <abbr 1 B >A1
 B <abbr 2 B >A2
 B <abbr 3 B >A3
