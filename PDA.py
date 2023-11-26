@@ -19,14 +19,15 @@ class PDA:
         else:
             ret = False
             for j in self.transitions:
-                if ((j[0] == self.state or j[0] == '_') and j[2] == self.stack.Top()):
+                if ((j[0] == self.state or j[0] == '_') and (j[2] == self.stack.Top() or j[2] == '_')):
                     if (j[1] == input) :
                         ret=True
                         if j[0] == '_':
                             self.state = self.state
                         else:
                             self.state = j[3]
-                        self.stack.pop()
+                        if j[2] != '_':
+                            self.stack.pop()
                         for k in reversed(j[4]):
                             if (k!='e'):
                                 self.stack.push(k)
