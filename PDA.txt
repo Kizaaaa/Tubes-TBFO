@@ -1,5 +1,5 @@
 Q H B L a I U F i T s D # total states
-<html <head </head> <title </title> <link <script </script> <body </body> <h1 </h1> <h2 </h2> <h3 </h3> <h4 </h4> <h5 </h5> <h6 </h6> <p </p> <em </em> <b </b> <abbr </abbr> <strong </strong> <small </small> <div </div <a </a> <button </button> <form </form> <table </table> <tr </tr> <td </td> <th </th> rel href src alt type action method type <br <hr <img <input submit reset button get post text password email number checkbox id class style = " > # input word symbols
+<html </html> <head </head> <title </title> <link <script </script> <body </body> <h1 </h1> <h2 </h2> <h3 </h3> <h4 </h4> <h5 </h5> <h6 </h6> <p </p> <em </em> <b </b> <abbr </abbr> <strong </strong> <small </small> <div </div <a </a> <button </button> <form </form> <table </table> <tr </tr> <td </td> <th </th> rel href src alt type action method type <br <hr <img <input submit reset button get post text password email number checkbox id class style = " > # input word symbols
 Z D H T C B 1 2 3 4 5 6 P E b A S s D U r d h R V = " > # stack symbols
 Q # starting state
 Z # starting stack
@@ -50,7 +50,6 @@ B </p> P B e
 B <hr B B >B
 B <div B D >DB # every tag for div
 D <link D L R>D
-L e B B B
 L e D D D
 D <script D s >CD
 s e D D D

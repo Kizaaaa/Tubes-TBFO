@@ -14,6 +14,7 @@ class PDA:
     
     def run(self,input):
         if (input not in self.inputs):
+            print(input + " is not in the input alphabet")
             return False
         else:
             ret = False
@@ -35,7 +36,9 @@ class PDA:
                         for k in reversed(j[4]):
                             if (k !='e'):
                                 self.stack.push(k)                        
-                        break              
+                        break  
+            if (ret==False):
+                print("No transition found for state " + self.state + " and input " + input)            
             return ret
     
     def isAccept(self):
